@@ -5,11 +5,64 @@
         <meta name="viewport"
             content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <title>Taxi</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+            
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 200;
+                color: var(--tg-theme-text-color);
+                background: var(--tg-theme-bg-color);
+            }
+
+
+            #main {
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+            }
+
+
+            h1 {
+                margin-top: 50px;
+                margin-bottom: 10px;
+            }
+
+
+            button {
+                border: 0;
+                border-radius: 5px;
+                margin-top: 50px;
+                height: 60px;
+                width: 200px;
+                font-size: 20px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 500ms ease;
+                color: var(--tg-theme-button-color);
+                background: var(--tg-theme-button-text-color);
+            }
+
+
+            button:hover {
+                background: var(--tg-theme-secondary-bg-color);
+            }
+
+        </style>
     </head>
     <body>
         <div id="main">
             <h1>Тестовая страница</h1>
             <button id="test">Click</button>
         </div>
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
     </body>
 </html>
