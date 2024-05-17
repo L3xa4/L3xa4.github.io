@@ -57,12 +57,6 @@
             }
             
 
-            #form {
-                display: none;
-                text-align: center;
-            }
-
-
             input {
                 width: 90%;
                 outline: none;
@@ -79,19 +73,36 @@
             }
 
 
+            #driver_list {
+                display: none;
+                text-align: center;
+            }
+
+
+            #passanger_list {
+                display: none;
+                text-align: center;
+            }
+
+
         </style>
     </head>
     <body>
         <div id="main">
-            <h1>Тестовая страница</h1>
+            <h1>Такси от двфу</h1>
+            <input type="text" placeholder="name" id="user_name">
             <button id="driver">Водитель</button>
             <button id="passanger">Пассажир</button>
             
         </div>
-        <form id="form">
-            <input type="text" placeholder="name" id="user_name">
+        <div id="passanger_list">
+            <h1>Страница пассажира</h1>
             <button id="test">Click</button>
-        </form>
+        </div>
+        <div id="driver_list">
+            <h1>Страница пассажира</h1>
+            <button id="test">Click</button>
+        </div>
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
         <script>
             let tg = window.Telegram.WebApp;
@@ -100,12 +111,12 @@
 
             passanger_btn.addEventListener("click", () => {
                 document.getElementById("main").style.display = "none";
-                document.getElementById("form").style.display = "block";
+                document.getElementById("passanger_list").style.display = "block";
                 document.getElementById("user_name").value = tg.initDataUnsafe.first_name + ' ' + tg.initDataUnsafe.last_name;
             });
             driver_btn.addEventListener("click", () => {
                 document.getElementById("main").style.display = "none";
-                document.getElementById("form").style.display = "block";
+                document.getElementById("driver_list").style.display = "block";
                 document.getElementById("user_name").value = tg.initDataUnsafe.first_name + ' ' + tg.initDataUnsafe.last_name;
             });
         </script>
