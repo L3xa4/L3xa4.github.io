@@ -62,6 +62,23 @@
                 text-align: center;
             }
 
+
+            input {
+                width: 90%;
+                outline: none;
+                margin: 10px 5%;
+                padding: 15px 10px;
+                font-size: 14px;
+                border: 2px solid silver;
+                border-radius: 5px;
+            }
+
+
+            input:focus {
+                border-color: #5d5fdb;
+            }
+
+
         </style>
     </head>
     <body>
@@ -72,6 +89,8 @@
             
         </div>
         <form id="form">
+            <input type="text" placeholder="name" id="user_name">
+            <input type="text" placeholder="telgram id" id="tg_id">
             <button id="test">Click</button>
         </form>
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -83,6 +102,8 @@
             passanger_btn.addEventListener("click", () => {
                 document.getElementById("main").style.display = "none";
                 document.getElementById("form").style.display = "none";
+                document.getElementById("user_name").value = tg.initDataUnsafe.first_name + ' ' + tg.initDataUnsafe.last_name
+                document.getElementById("tg_id").value = tg.initDataUnsafe.user
             });
             driver_btn.addEventListener("click", () => {
                 document.getElementById("main").style.display = "none";
