@@ -85,6 +85,16 @@
             }
 
 
+            select {
+                width: 90%;
+                outline: none;
+                margin: 10px 5%;
+                padding: 15px 10px;
+                font-size: 14px;
+                border: 2px solid silver;
+                border-radius: 5px;
+            }
+
         </style>
     </head>
     <body>
@@ -95,13 +105,18 @@
             <button id="passanger">Пассажир</button>
             
         </div>
-        <div id="passanger_list">
+        <div id="passanger">
             <h1>Страница пассажира</h1>
-            <button id="test">Click</button>
+            <select name="Списко водителей" id="drivers_list" multiple="multiple" size="4">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
         </div>
-        <div id="driver_list">
+        <div id="driver">
             <h1>Страница водителя</h1>
-            <button id="test">Click</button>
+            <button id="test">Создать комнату</button>
         </div>
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
         <script>
@@ -111,12 +126,12 @@
 
             passanger_btn.addEventListener("click", () => {
                 document.getElementById("main").style.display = "none";
-                document.getElementById("passanger_list").style.display = "block";
+                document.getElementById("passanger").style.display = "block";
                 document.getElementById("user_name").value = tg.initDataUnsafe.first_name + ' ' + tg.initDataUnsafe.last_name;
             });
             driver_btn.addEventListener("click", () => {
                 document.getElementById("main").style.display = "none";
-                document.getElementById("driver_list").style.display = "block";
+                document.getElementById("driver").style.display = "block";
                 document.getElementById("user_name").value = tg.initDataUnsafe.first_name + ' ' + tg.initDataUnsafe.last_name;
             });
         </script>
