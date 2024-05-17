@@ -93,6 +93,8 @@
                 font-size: 14px;
                 border: 2px solid silver;
                 border-radius: 5px;
+                color: var(--tg-theme-button-color);
+                background: var(--tg-theme-button-text-color);
             }
 
         </style>
@@ -105,7 +107,7 @@
             <button id="passanger">Пассажир</button>
             
         </div>
-        <div id="passanger">
+        <div id="passanger_page">
             <h1>Страница пассажира</h1>
             <select name="Списко водителей" id="drivers_list" multiple="multiple" size="4">
                 <option value="1">1</option>
@@ -114,7 +116,7 @@
                 <option value="4">4</option>
             </select>
         </div>
-        <div id="driver">
+        <div id="driver_page">
             <h1>Страница водителя</h1>
             <button id="test">Создать комнату</button>
         </div>
@@ -126,12 +128,12 @@
 
             passanger_btn.addEventListener("click", () => {
                 document.getElementById("main").style.display = "none";
-                document.getElementById("passanger").style.display = "block";
+                document.getElementById("passanger_page").style.display = "block";
                 document.getElementById("user_name").value = tg.initDataUnsafe.first_name + ' ' + tg.initDataUnsafe.last_name;
             });
             driver_btn.addEventListener("click", () => {
                 document.getElementById("main").style.display = "none";
-                document.getElementById("driver").style.display = "block";
+                document.getElementById("driver_page").style.display = "block";
                 document.getElementById("user_name").value = tg.initDataUnsafe.first_name + ' ' + tg.initDataUnsafe.last_name;
             });
         </script>
