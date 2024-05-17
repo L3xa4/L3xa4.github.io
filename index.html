@@ -28,7 +28,6 @@
                 width: 100%;
                 padding: 20px;
                 text-align: center;
-                display: none;
             }
 
 
@@ -59,7 +58,7 @@
             
 
             #form {
-                /* display: none; */
+                display: none;
                 text-align: center;
             }
 
@@ -68,12 +67,27 @@
     <body>
         <div id="main">
             <h1>Тестовая страница</h1>
-            <button id="test">Click</button>
-        </div>
-        <form id="form">
             <button id="driver">Водитель</button>
             <button id="passanger">Пассажир</button>
+            
+        </div>
+        <form id="form">
+            <button id="test">Click</button>
         </form>
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        <script>
+            let tg = window.Telegram.WebApp;
+            let passanger_btn = document.getElementById("passanger")
+            let driver_btn = document.getElementById("driver")
+
+            passanger_btn.addEventListener("click", () => {
+                document.getElementById("main").style.display = "none";
+                document.getElementById("form").style.display = "none";
+            });
+            driver_btn.addEventListener("click", () => {
+                document.getElementById("main").style.display = "none";
+                document.getElementById("form").style.display = "block";
+            });
+        </script>
     </body>
 </html>
