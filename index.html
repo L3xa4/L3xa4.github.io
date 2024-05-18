@@ -17,7 +17,7 @@
 
 
             body {
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: IBMPlexMono , Helvetica, sans-serif;
                 font-weight: 200;
                 color: var(--tg-theme-text-color);
                 background: var(--tg-theme-bg-color);
@@ -116,11 +116,11 @@
         </div>
         <div id="passanger_page">
             <h1>Страница пассажира</h1>
-            <select name="Списко водителей" id="drivers_list" multiple="multiple" size="4">
-                <option value="1">1</option>
+            <select name="Списко водителей" id="drivers_list">
+                <!-- <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
-                <option value="4">4</option>
+                <option value="4">4</option> -->
             </select>
         </div>
         <div id="driver_page">
@@ -133,16 +133,26 @@
             let passanger_btn = document.getElementById("passanger")
             let driver_btn = document.getElementById("driver")
 
+            document.getElementById("user_name").value = tg.initDataUnsafe.first_name + ' ' + tg.initDataUnsafe.last_name;
+
             passanger_btn.addEventListener("click", () => {
                 document.getElementById("main").style.display = "none";
                 document.getElementById("passanger_page").style.display = "block";
-                document.getElementById("user_name").value = tg.initDataUnsafe.first_name + ' ' + tg.initDataUnsafe.last_name;
             });
+            
             driver_btn.addEventListener("click", () => {
                 document.getElementById("main").style.display = "none";
                 document.getElementById("driver_page").style.display = "block";
-                document.getElementById("user_name").value = tg.initDataUnsafe.first_name + ' ' + tg.initDataUnsafe.last_name;
             });
+
+            const listOptions = ["1 водитель", "2 водитель", "3 водитель"];
+            document.getElementById("drivers_list").size = listOptions.length;
+            for (let i = 0; i < listOptions.length; i++) {
+                const option = document.createElement("option");
+                option.value = listOptions[i];
+                option.text = listOptions[i];
+                document.getElementById("drivers_list").add(option);
+            }
         </script>
     </body>
 </html>
