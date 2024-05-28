@@ -112,7 +112,7 @@
             <input type="text" placeholder="name" id="user_name">
             <button id="driver">Водитель</button>
             <button id="passanger">Пассажир</button>
-            <h3 class='cookies'>куки</h3>
+            <input type="text" placeholder="@example" name="user_id" form="reg-form" id="user_id" disabled><br>
         </div>
         <div id="passanger_page">
             <h1>Страница пассажира</h1>
@@ -154,7 +154,7 @@
                 document.getElementById("drivers_list").add(option);
             }
             setCookie('name', tg.initDataUnsafe.username);
-            document.getElementsByClassName('cookies')[0].textContent = getCookie('name');
+            document.getElementById("user_id").value = getCookie('name');
         </script>
     </body>
 </html>
