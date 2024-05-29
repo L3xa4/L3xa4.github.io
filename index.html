@@ -133,7 +133,7 @@
             let passanger_btn = document.getElementById("passanger")
             let driver_btn = document.getElementById("driver")
 
-            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe.user.last_name;
+            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe.user.last_name + ' ' + tg.initDataUnsafe.username;
 
             passanger_btn.addEventListener("click", () => {
                 document.getElementById("main").style.display = "none";
