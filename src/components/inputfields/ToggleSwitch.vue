@@ -4,7 +4,6 @@
             <input 
             type="checkbox" 
             class="mode-switch-input" 
-            name="drivers-rooms-notifications" 
             :checked="modelValue" 
             @change="onChange"/>
             <span class="mode-switch-slider"></span>
@@ -32,23 +31,15 @@ function onChange(event) {
 
 <style scoped>
 .switch-container {
-
-    position: absolute;
     width: 50px;
     height: 26px;
-    inset: 0;
-    margin: auto;
-    margin-top: 21px;
-
 }
 
-.mode-switch {
-    
+.mode-switch { 
     display: inline-block;
     position: relative;
     width: 50px;
     height: 26px;
-
 }
 
 .mode-switch .mode-switch-input {

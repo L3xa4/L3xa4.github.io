@@ -1,7 +1,7 @@
 <template>
-    <RouterView v-slot="{ Component, route }">
+    <RouterView v-slot="{ Component, route }" :key="'mainRouter'">
         <Transition name="settings" mode="">
-            <div :key="route.fullPath" :class="['route-wrapper', route.meta.transition]" v-if="Component">
+            <div :key="route.matched[0]?.path || route.path" :class="['route-wrapper', route.meta.transition, route.meta.background]" v-if="Component">
                 <component :is="Component" />
             </div>
         </Transition>
@@ -16,23 +16,6 @@ import { Transition } from 'vue';
 
 export default {
     components: {Routes, AppHeader, AppFooter},
-    // watch: {
-    //     '$route.path'() {
-    //         this.updateBackgroundColor();
-    //     }
-    //     },
-    //     mounted() {
-    //         this.updateBackgroundColor();
-    //     },
-    //     methods: {
-    //     updateBackgroundColor() {
-    //         if (this.$route.path === '/settings') {
-    //             document.body.style.backgroundColor = 'white';
-    //         } else {
-    //             document.body.style.backgroundColor = '#192024';
-    //         }
-    //     }
-    // }
 }
 </script>
 
@@ -60,7 +43,7 @@ export default {
     transition: all 0.3s ease;
 }
 
-.route-wrapper.settings {
+.route-wrapper.white-background {
     background: white;
 }
 </style>
