@@ -6,10 +6,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Луна</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script type="module" crossorigin src="/assets/index-DGpVIGoR.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BjYw3iLK.css">
+    <script type="module" crossorigin src="/assets/index-BRhgZQMc.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CYuYJG87.css">
   </head>
   <body>
     <div id="app"></div>
+    <script>
+      function setAppHeight() {
+        document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)
+      }
+
+      window.addEventListener('resize', () => {setAppHeight()})
+    </script>
   </body>
 </html>
