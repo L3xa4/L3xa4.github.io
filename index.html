@@ -12,7 +12,13 @@
     <div id="app"></div>
     <script>
       window.onload = () => {document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)}
-      document.body.onclick = () => {document.activeElement.blur()}
+      document.addEventListener('touchend', (e) => {
+        const activeElement = document.activeElement;
+        if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
+          activeElement.blur();
+          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        }
+      });
     </script>
   </body>
 </html>
