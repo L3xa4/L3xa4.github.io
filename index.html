@@ -12,13 +12,19 @@
     <div id="app"></div>
     <script>
       window.onload = () => {document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)}
-      document.addEventListener('touchend', (e) => {
-        const activeElement = document.activeElement;
-        if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
-          activeElement.blur();
-          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      document.addEventListener('click', function(event) {
+        if (event.target.tagName !== 'INPUT' && 
+            event.target.tagName !== 'TEXTAREA' &&
+            !event.target.closest('[contenteditable="true"]')) {
+            
+            const activeElement = document.activeElement;
+            if (activeElement && (activeElement.tagName === 'INPUT' || 
+                                  activeElement.tagName === 'TEXTAREA' ||
+                                  activeElement.contentEditable === 'true')) {
+                activeElement.blur();
+            }
         }
-      });
+    });
     </script>
   </body>
 </html>
